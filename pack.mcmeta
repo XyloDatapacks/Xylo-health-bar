@@ -1,0 +1,17 @@
+{
+    "id": "xylo.xylo_health_bar",
+    "pack": {
+        "description": "Xylo's Health Bar. By Xylo_Datapacks",
+        "pack_format": 26,
+        "supported_formats": [26, 31]
+    },
+    "overlays": {
+        "entries": [
+            {
+                "formats": 26,
+                "directory": "overlay_1-20-3"
+            }
+        ]
+    }
+}
+
