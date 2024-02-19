@@ -1,0 +1,1 @@
+tellraw @s ["Hit ",{"selector":"@e[type=!#xylo_library:non_mob,predicate=xylo_library:internal/hit_detection/is_victim]"}]
