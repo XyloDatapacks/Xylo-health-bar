@@ -6,5 +6,4 @@ summon minecraft:text_display ~ ~ ~ {Tags:["smithed.entity","smithed.strict","xh
 ride @e[type=minecraft:text_display,distance=..0.01,tag=xhb.health_bar_new,limit=1] mount @s
 execute on passengers if entity @s[tag=xhb.health_bar_new] run function xylo_health_bar:bar/activate/mob/data
 
-scoreboard players operation @s xhb.health_bar.end_time = #xlib.time xlib.op
-scoreboard players add @s xhb.health_bar.end_time 100
+function xylo_health_bar:bar/activate/refresh_time

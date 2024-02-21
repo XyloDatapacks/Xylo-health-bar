@@ -2,10 +2,13 @@
 # @context: health bar text display
 # @within: xylo_health_bar:tick
 
+# get if entity found and get end time
+scoreboard players set #xhb.bar.tick_mob.mob_found xhb.op 0
+execute store success score #xhb.bar.tick_mob.mob_found xhb.op on vehicle run scoreboard players operation #xhb.health_bar.end_time xhb.op = @s xhb.health_bar.end_time
+# dispose if player died or logged off
+execute if score #xhb.bar.tick_mob.mob_found xhb.op matches 0 run return run function xylo_health_bar:bar/dispose
 # dispose if time passed
-execute if score #xlib.time xlib.op >= @s xhb.health_bar.end_time run return run function xylo_health_bar:bar/dispose
-# dispose if entity died 
-execute if predicate xylo_library:no_vehicle run return run function xylo_health_bar:bar/dispose
+execute if score #xlib.time xlib.op >= #xhb.health_bar.end_time xhb.op run return run function xylo_health_bar:bar/dispose
 
 # update health
 execute store result score @s xhb.health_bar.health on vehicle run data get entity @s Health 1
